@@ -60,7 +60,7 @@ python inference.py -i PATH_TO_IMAGE_FOLDER -o PATH_TO_OUTPUT_FOLDER --fileName 
 ```
 *Example (with <kbd>veach-ajar.exr</kbd> and <kbd>veach-ajar_gt.exr</kbd> in the folder <kbd>image</kbd>):
 ```
-python inference.py -i image -o output --fileName veach-ajar
+python inference.py -i image -o output --fileName veach-ajar --isLoadGt
 ```
 
 ## Results
