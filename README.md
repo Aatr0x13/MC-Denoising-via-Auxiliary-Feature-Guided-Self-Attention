@@ -21,7 +21,7 @@ While self-attention has been successfully applied in a variety of natural langu
 ## Dataset
 
 ## Model weights
-* Model weights w/o diffuse and specular decomposition can be downloaded from [googledrive]()
+* Model weights w/o diffuse and specular decomposition can be downloaded from [googledrive](https://drive.google.com/file/d/12iyOwhxdqoHwNtQ9Y01FEttYG30jVPrQ/view?usp=sharing)
 * Model weights w/ diffuse and specular decomposition will be published soon!
 
 ## Train and evaluate
