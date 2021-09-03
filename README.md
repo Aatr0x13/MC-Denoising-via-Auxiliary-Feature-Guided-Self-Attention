@@ -11,6 +11,10 @@ For a fairer comparison with previous models (w/ diffuse and specular decomposit
 ## Abstract
 While self-attention has been successfully applied in a variety of natural language processing and computer vision tasks, its application in Monte Carlo (MC) image denoising has not yet been well explored. This paper presents a self-attention based MC denoising deep learning network based on the fact that self-attention is essentially non-local means filtering in the embedding space which makes it inherently very suitable for the denoising task. Particularly, we modify the standard self-attention mechanism to an auxiliary feature guided self-attention that considers the by-products (e.g., auxiliary feature buffers) of the MC rendering process. As a critical prerequisite to fully exploit the performance of self-attention, we design a multi-scale feature extraction stage, which provides a rich set of raw features for the later self-attention module. As self-attention poses a high computational complexity, we describe several ways that accelerate it. Ablation experiments validate the necessity and effectiveness of the above design choices. Comparison experiments show that the proposed self-attention based MC denoising method outperforms the current state-of-the-art methods. 
 
+![Teaser](https://github.com/Aatr0x13/MC-Denoising-via-Auxiliary-Feature-Guided-Self-Attention/blob/main/assets/teaser.png)
+
+#### Fig. 1. Current state-of-the-art methods, including NFOR \[Bitterli et al.2016], KPCN \[Bako et al.2017] and ACFM \[Xu et al.2019], fail to produce a plausible denoised image for the scene "VeachAjar" because of the absence of specular albedo and the extremely noisy input. In contrast, our proposed model with auxiliary feature guided self-attention can gather the most relevant information for each pixel from its surrounding region in an edge-preserving manner, thus better restoring image details while preserving image structures and producing visually pleasing denoising results.
+
 ## Dependencies (other versions may also work)
 * Python 3.8
 * PyTorch 1.8.0
