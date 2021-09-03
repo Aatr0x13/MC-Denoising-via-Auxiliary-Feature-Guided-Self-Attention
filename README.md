@@ -4,7 +4,7 @@ Official implementation of MC Denoising via Auxiliary Feature Guided Self-Attent
 ## Notice
 * We now have the time and resources to train a model with diffuse and specular decomposition.
 For a fairer comparison with previous models (w/ diffuse and specular decomposition), its model weights, codes and evaluation results will be published soon!
-* Codes implemented in [Jittor](https://github.com/Jittor/jittor) (a Just-in-time(JIT) deep learning framework) will be published soon!
+* Code implemented in [Jittor](https://github.com/Jittor/jittor) (a Just-in-time(JIT) deep learning framework) will be published soon!
 * We trained all our models on Nvidia RTX 3090. We have tried to use automatic mixed precision (amp) in training to reduce memory usage and speed up the process, unfortunately, it inevitably causes NaN loss. 
 * Instead, we used gradient checkpoints on some of the Transformer blocks to reduce memory usage (with the downside of increasing training time a bit).
 
@@ -28,9 +28,40 @@ While self-attention has been successfully applied in a variety of natural langu
 
 ## Model weights
 * Model weights w/o diffuse and specular decomposition can be downloaded from [googledrive](https://drive.google.com/file/d/12iyOwhxdqoHwNtQ9Y01FEttYG30jVPrQ/view?usp=sharing)
+
+  Please put the weights in <kbd>models\wo_diff_spec_decomp</kbd>.
 * Model weights w/ diffuse and specular decomposition will be published soon!
 
+  Please put the weights in <kbd>models\w_diff_spec_decomp</kbd>.
+
 ## Train and evaluate
+For more options, please refer to the code.
+* To train, run:
+```
+python train.py -i PATH_TO_IMAGE_FOLDER -d PATH_TO_TRAIN_H5_FOLDER -o PATH_TO_OUTPUT_FOLDER
+```
+*Example (with subfolders <kbd>32spp</kbd> and <kbd>32768spp</kbd> in the folder <kbd>image</kbd> and storing the dataset .h5 file in the folder <kbd>dataset</kbd>):
+```
+python train.py -i image -d dataset -o output
+```  
+***
+* To test (.h5), run:
+```
+python test.py -i PATH_TO_TEST_H5_FOLDER -o PATH_TO_OUTPUT_FOLDER
+```
+*Example (with <kbd>test_4.h5</kbd> in the folder <kbd>h5</kbd>):
+```
+python test.py -i h5 -o output --datasetSPP 4
+```  
+***  
+* To inference (full image), run:
+```
+python inference.py -i PATH_TO_IMAGE_FOLDER -o PATH_TO_OUTPUT_FOLDER --fileName NAME_OF_IAMGE
+```
+*Example (with <kbd>veach-ajar.exr</kbd> and <kbd>veach-ajar_gt.exr</kbd> in the folder <kbd>image</kbd>):
+```
+python inference.py -i image -o output --fileName veach-ajar
+```
 
 ## Results
 |      |      |
