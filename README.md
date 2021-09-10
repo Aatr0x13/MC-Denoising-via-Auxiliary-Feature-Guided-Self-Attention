@@ -1,5 +1,5 @@
 # MC-Denoising-via-Auxiliary-Feature-Guided-Self-Attention
-Official implementation of MC Denoising via Auxiliary Feature Guided Self-Attention (SIGGRAPH Asia 2021 paper) \[[PDF]()\]
+Official implementation of MC Denoising via Auxiliary Feature Guided Self-Attention (SIGGRAPH Asia 2021 paper) \[[PDF](http://nieyongwei.net/download/SigAsia_2021_Monte_Carlo_Denoising_low_res.pdf)\]
 
 ## Notice
 * We now have the time and resources to train a model with diffuse and specular decomposition.
